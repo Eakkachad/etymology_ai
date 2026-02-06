@@ -1,0 +1,144 @@
+# Model Architecture Configuration
+
+# Phonetic Embedding Model
+phonetic_embedding:
+  architecture: "transformer"
+  embedding:
+    vocab_size: 256  # IPA characters + special tokens
+    embedding_dim: 512
+    max_sequence_length: 50  # max phonemes per word
+  
+  transformer:
+    num_layers: 6
+    num_heads: 8
+    d_model: 512
+    d_ff: 2048
+    dropout: 0.1
+    activation: "gelu"
+  
+  output:
+    pooling: "mean"  # Options: mean, max, cls
+    output_dim: 512
+
+# Siamese Network for Cognate Detection
+siamese_network:
+  encoder:
+    shared_weights: true
+    base_model: "phonetic_embedding"  # Use pretrained phonetic embeddings
+  
+  projection:
+    hidden_dims: [512, 256, 128]
+    activation: "relu"
+    dropout: 0.2
+  
+  similarity:
+    metric: "cosine"  # Options: cosine, euclidean, bilinear
+    
+  loss:
+    type: "triplet"
+    margin: 0.5
+    distance_metric: "cosine"
+
+# Graph Neural Network for Etymology Tree
+etymology_gnn:
+  architecture: "gat"  # Graph Attention Network
+  
+  node_features:
+    embedding_dim: 512
+    include_phonetic: true
+    include_semantic: true
+    include_language_family: true
+  
+  gnn_layers:
+    - type: "GATConv"
+      in_channels: 512
+      out_channels: 256
+      heads: 4
+      dropout: 0.2
+    - type: "GATConv"
+      in_channels: 1024  # 256 * 4 heads
+      out_channels: 256
+      heads: 4
+      dropout: 0.2
+    - type: "GATConv"
+      in_channels: 1024
+      out_channels: 128
+      heads: 1
+      dropout: 0.2
+  
+  readout:
+    type: "global_attention"
+  
+  link_prediction:
+    method: "dot_product"  # Options: dot_product, mlp, distance
+
+# Training Configuration
+training:
+  # Hardware
+  devices: 8  # Number of GPUs
+  accelerator: "gpu"
+  strategy: "ddp"  # Distributed Data Parallel
+  precision: "16-mixed"  # Mixed precision training
+  
+  # Hyperparameters
+  batch_size: 256  # Per GPU
+  accumulate_grad_batches: 2
+  learning_rate: 1e-4
+  weight_decay: 1e-5
+  max_epochs: 100
+  
+  # Optimizer
+  optimizer:
+    type: "adamw"
+    betas: [0.9, 0.999]
+    eps: 1e-8
+  
+  # Scheduler
+  scheduler:
+    type: "cosine_annealing"
+    T_max: 100
+    eta_min: 1e-6
+  
+  # Regularization
+  gradient_clip_val: 1.0
+  early_stopping:
+    enabled: true
+    monitor: "val_loss"
+    patience: 10
+    mode: "min"
+  
+  # Checkpointing
+  checkpoint:
+    monitor: "val_accuracy"
+    mode: "max"
+    save_top_k: 3
+    every_n_epochs: 1
+
+# Data Processing
+data:
+  train_val_test_split: [0.8, 0.1, 0.1]
+  
+  # Phonetic Processing
+  phonetic:
+    ipa_backend: "epitran"  # Options: epitran, espeak
+    normalize: true
+    stress_marks: false
+  
+  # Cognate Pairs Generation
+  cognate_sampling:
+    positive_pairs_per_word: 5  # Known cognates
+    negative_pairs_per_word: 10  # Random non-cognates
+    hard_negative_mining: true  # Sample confusing pairs
+  
+  # Data Augmentation
+  augmentation:
+    enabled: true
+    phonetic_noise: 0.05  # Random phoneme substitution
+    dropout_phonemes: 0.1
+
+# Experiment Tracking
+experiment:
+  tracking: "wandb"  # Options: wandb, mlflow, tensorboard
+  project_name: "etymology-ai"
+  save_dir: "outputs/experiments"
+  log_every_n_steps: 50

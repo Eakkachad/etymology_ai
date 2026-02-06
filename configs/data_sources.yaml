@@ -1,0 +1,72 @@
+# Data Sources Configuration
+
+# Kaikki - Wiktionary Extracted Data
+kaikki:
+  base_url: "https://kaikki.org/dictionary"
+  languages:
+    thai:
+      url: "https://kaikki.org/dictionary/rawdata/kaikki.org-dictionary-th-extract.jsonl.gz"
+      etymology_key: "etymology_templates"
+      fields:
+        - word
+        - pos  # part of speech
+        - senses
+        - etymology_text
+        - etymology_templates
+    sanskrit:
+      url: "https://kaikki.org/dictionary/rawdata/kaikki.org-dictionary-sa-extract.jsonl.gz"
+    pali:
+      url: "https://kaikki.org/dictionary/rawdata/kaikki.org-dictionary-pi-extract.jsonl.gz"
+    latin:
+      url: "https://kaikki.org/dictionary/rawdata/kaikki.org-dictionary-la-extract.jsonl.gz"
+    greek:
+      url: "https://kaikki.org/dictionary/rawdata/kaikki.org-dictionary-grc-extract.jsonl.gz"
+    english:
+      url: "https://kaikki.org/dictionary/rawdata/kaikki.org-dictionary-en-extract.jsonl.gz"
+
+# WOLD - World Loanword Database
+wold:
+  base_url: "http://wold.clld.org"
+  api_endpoint: "http://wold.clld.org/api/v1"
+  languages:
+    thai:
+      language_id: 28
+      focus: "loanwords_from_pali_sanskrit"
+  download_all: true
+  cache_dir: "data/raw/wold"
+
+# Starling - Tower of Babel Etymology Database
+starling:
+  base_url: "http://starling.rinet.ru"
+  databases:
+    - indo_european
+    - sino_tibetan  # For potential Thai connection research
+  pie_roots_file: "http://starling.rinet.ru/cgi-bin/response.cgi?root=config&morpho=0&basename=\\data\\ie\\piet"
+  cache_dir: "data/raw/starling"
+
+# PanLex - Massive Translation Database
+panlex:
+  api_url: "https://api.panlex.org/v2"
+  rate_limit: 10  # requests per second
+  languages:
+    - tha  # Thai
+    - san  # Sanskrit
+    - pli  # Pali
+    - lat  # Latin
+    - ell  # Greek (Modern)
+    - grc  # Ancient Greek
+    - eng  # English
+  cache_dir: "data/raw/panlex"
+
+# Swadesh Lists for Initial Testing
+swadesh:
+  url: "https://en.wiktionary.org/wiki/Appendix:Swadesh_lists"
+  list_sizes:
+    - 100
+    - 207
+  focus_languages:
+    - Thai
+    - Sanskrit
+    - Latin
+    - Ancient Greek
+    - English
