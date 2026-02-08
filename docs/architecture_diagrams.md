@@ -162,11 +162,11 @@ graph TB
     
     subgraph Similarity["Similarity Scoring"]
         COS[Cosine<br/>Similarity]
-        DIST[Distance:<br/>d = 1 - cos(φ₁, φ₂)]
+        DIST["Distance:<br/>d = 1 - cos(φ₁, φ₂)"]
     end
     
     subgraph Output["Cognate Prediction"]
-        PROB[P(cognate)]
+        PROB["P(cognate)"]
         CONF[Confidence<br/>Score]
     end
     

@@ -1,237 +1,86 @@
 [
   {
-    "thai": {
-      "word": "ไตร",
-      "pos": "numeral",
-      "meaning": "three"
-    },
-    "sanskrit": {
-      "word": "tri",
-      "devanagari": "त्रि",
+    "word1": {
+      "text": "tri",
+      "language": "san",
       "ipa": "tri"
     },
-    "pie": {
-      "reconstructed": "*tréyes"
+    "word2": {
+      "text": "three",
+      "language": "eng",
+      "ipa": "θriː"
     },
-    "cognates": {
-      "latin": {
-        "word": "trēs",
-        "ipa": "treːs"
-      },
-      "greek": {
-        "word": "τρεῖς",
-        "romanized": "treîs",
-        "ipa": "trêːs"
-      },
-      "english": {
-        "word": "three",
-        "ipa": "θriː"
-      }
-    }
+    "is_cognate": true,
+    "etymology": "Proto-Indo-European *tréyes"
   },
   {
-    "thai": {
-      "word": "ทศ",
-      "pos": "numeral",
-      "meaning": "ten"
+    "word1": {
+      "text": "mātr̥",
+      "language": "san",
+      "ipa": "maːtr̩"
     },
-    "sanskrit": {
-      "word": "daśa",
-      "devanagari": "दश",
-      "ipa": "daɕa"
+    "word2": {
+      "text": "mother",
+      "language": "eng",
+      "ipa": "mʌðə"
     },
-    "pie": {
-      "reconstructed": "*deḱm̥"
-    },
-    "cognates": {
-      "latin": {
-        "word": "decem",
-        "ipa": "dekem"
-      },
-      "greek": {
-        "word": "δέκα",
-        "romanized": "déka",
-        "ipa": "deka"
-      },
-      "english": {
-        "word": "ten",
-        "ipa": "tɛn"
-      }
-    }
+    "is_cognate": true,
+    "etymology": "Proto-Indo-European *méh₂tēr"
   },
   {
-    "thai": {
-      "word": "มารดา",
-      "pos": "noun",
-      "meaning": "mother"
+    "word1": {
+      "text": "pitar",
+      "language": "san",
+      "ipa": "pitɐr"
     },
-    "sanskrit": {
-      "word": "mātṛ",
-      "devanagari": "मातृ",
-      "ipa": "maːtɨ"
+    "word2": {
+      "text": "father",
+      "language": "eng",
+      "ipa": "fɑːðə"
     },
-    "pie": {
-      "reconstructed": "*méh₂tēr"
-    },
-    "cognates": {
-      "latin": {
-        "word": "māter",
-        "ipa": "maːter"
-      },
-      "greek": {
-        "word": "μήτηρ",
-        "romanized": "mētēr",
-        "ipa": "mɛ̌ːtɛːr"
-      },
-      "english": {
-        "word": "mother",
-        "ipa": "mʌðər"
-      }
-    }
+    "is_cognate": true,
+    "etymology": "Proto-Indo-European *ph₂tḗr"
   },
   {
-    "thai": {
-      "word": "บิดา",
-      "pos": "noun",
-      "meaning": "father"
+    "word1": {
+      "text": "नाम",
+      "language": "san",
+      "ipa": "naːmɐ"
     },
-    "sanskrit": {
-      "word": "pitṛ",
-      "devanagari": "पितृ",
-      "ipa": "pitɨ"
+    "word2": {
+      "text": "name",
+      "language": "eng",
+      "ipa": "neɪm"
     },
-    "pie": {
-      "reconstructed": "*ph₂tḗr"
-    },
-    "cognates": {
-      "latin": {
-        "word": "pater",
-        "ipa": "pater"
-      },
-      "greek": {
-        "word": "πατήρ",
-        "romanized": "patēr",
-        "ipa": "patɛːr"
-      },
-      "english": {
-        "word": "father",
-        "ipa": "fɑːðər"
-      }
-    }
+    "is_cognate": true,
+    "etymology": "Proto-Indo-European *h₁nómn̥"
   },
   {
-    "thai": {
-      "word": "ทาน",
-      "pos": "noun",
-      "meaning": "charity, giving"
+    "word1": {
+      "text": "दन्त",
+      "language": "san",
+      "ipa": "dɐntɐ"
     },
-    "sanskrit": {
-      "word": "dāna",
-      "devanagari": "दान",
-      "ipa": "daːna"
+    "word2": {
+      "text": "tooth",
+      "language": "eng",
+      "ipa": "tuːθ"
     },
-    "pie": {
-      "reconstructed": "*deh₃-"
-    },
-    "cognates": {
-      "latin": {
-        "word": "dōnum",
-        "ipa": "doːnum"
-      },
-      "greek": {
-        "word": "δῶρον",
-        "romanized": "dôron",
-        "ipa": "dɔ̂ːron"
-      },
-      "english": {
-        "word": "donate",
-        "ipa": "doʊneɪt"
-      }
-    }
+    "is_cognate": true,
+    "etymology": "Proto-Indo-European *h₃dónts"
   },
   {
-    "thai": {
-      "word": "นาม",
-      "pos": "noun",
-      "meaning": "name"
+    "word1": {
+      "text": "नव",
+      "language": "san",
+      "ipa": "nɐʋɐ"
     },
-    "sanskrit": {
-      "word": "nāman",
-      "devanagari": "नामन्",
-      "ipa": "naːman"
+    "word2": {
+      "text": "new",
+      "language": "eng",
+      "ipa": "njuː"
     },
-    "pie": {
-      "reconstructed": "*h₁nómn̥"
-    },
-    "cognates": {
-      "latin": {
-        "word": "nōmen",
-        "ipa": "noːmen"
-      },
-      "greek": {
-        "word": "ὄνομα",
-        "romanized": "ónoma",
-        "ipa": "ónoma"
-      },
-      "english": {
-        "word": "name",
-        "ipa": "neɪm"
-      }
-    }
-  },
-  {
-    "thai": {
-      "word": "นัย",
-      "pos": "noun",
-      "meaning": "eye (archaic)"
-    },
-    "sanskrit": {
-      "word": "nayana",
-      "devanagari": "नयन",
-      "ipa": "najana"
-    },
-    "pie": {
-      "reconstructed": "*h₃ekʷ-"
-    },
-    "cognates": {
-      "latin": {
-        "word": "oculus",
-        "ipa": "ɔkʊlʊs"
-      },
-      "greek": {
-        "word": "ὄσσε",
-        "romanized": "ósse",
-        "ipa": "osse"
-      },
-      "english": {
-        "word": "eye",
-        "ipa": "aɪ"
-      }
-    }
-  },
-  {
-    "thai": {
-      "word": "อัคคี",
-      "pos": "noun",
-      "meaning": "fire"
-    },
-    "sanskrit": {
-      "word": "agni",
-      "devanagari": "अग्नि",
-      "ipa": "agni"
-    },
-    "pie": {
-      "reconstructed": "*h₁n̥gʷnis"
-    },
-    "cognates": {
-      "latin": {
-        "word": "ignis",
-        "ipa": "ignis"
-      },
-      "english": {
-        "word": "ignite",
-        "ipa": "ɪɡnaɪt"
-      }
-    }
+    "is_cognate": true,
+    "etymology": "Proto-Indo-European *néwos"
   }
 ]
